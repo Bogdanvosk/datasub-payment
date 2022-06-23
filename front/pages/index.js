@@ -1,6 +1,5 @@
 import styles from '../styles/Form.module.css'
 import { useForm } from "react-hook-form";
-import { Button, Input } from '@mui/material';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import React from 'react';
@@ -46,17 +45,17 @@ export default function App() {
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputContainer}>
           <label htmlFor="cardNumber">Card number</label>
-          <InputMask id="cardNumber" mask="9999 9999 9999 9999" maskPlaceholder="" {...register("cardNumber")} />
+          <InputMask id="cardNumber" mask="9999 9999 9999 9999" maskChar={null} {...register("cardNumber")} />
           {errors.cardNumber && <p className={styles.error}>{errors.cardNumber.message}</p>}
         </div>
         <div className={styles.inputContainer}>
           <label htmlFor="expDate">Expiration date</label>
-          <InputMask id="expDate" maskPlaceholder="" mask="99/9999" {...register("expDate")} />
+          <InputMask id="expDate" maskChar={null} mask="99/9999" {...register("expDate")} />
           {errors.expDate && <p className={styles.error}>{errors.expDate.message}</p>}
         </div>
         <div className={styles.inputContainer}>
           <label htmlFor="cvv">CVV</label>
-          <InputMask id="cvv" mask="999" maskPlaceholder="" {...register("cvv")} />
+          <InputMask id="cvv" mask="999" maskChar={null} {...register("cvv")} />
           {errors.cvv && <p className={styles.error}>{errors.cvv.message}</p>}
         </div>
         <div className={styles.inputContainer}>
